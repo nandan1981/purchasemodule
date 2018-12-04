@@ -12,13 +12,11 @@ public class PurchaseController {
 
     @RequestMapping(value = "/showProductPage/{type}",method = RequestMethod.GET)
     public String showProductPage(@PathVariable(name="type",required = true) String type){
-
         return "purchasePage";
     }
 
     @RequestMapping(value = "postProductAndGetDetails")
     public Product postProductAndGetDetails(){
-
         return null;
     }
 
