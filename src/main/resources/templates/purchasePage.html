@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Purchase Module Page</title>
+    <title>Purchase new stuff</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,7 +17,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <img src="/public/static/images/logo.png" /> <a class="navbar-brand" href="#">RentalAdda</a>
+            <!--<img src="/public/static/images/logo.png" /> <a class="navbar-brand" href="#">RentalAdda</a>-->
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
@@ -42,8 +41,9 @@
             </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li th:if="${isEnabledSignUp}"><a href="#"><span class="glyphicon"></span> Sign Up</a></li>
+            <li th:if="${isEnabledLogin}"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li th:if="${isLoggedIn}"><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
         </ul>
     </div>
 </nav>
