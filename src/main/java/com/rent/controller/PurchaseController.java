@@ -18,6 +18,14 @@ public class PurchaseController {
         return "purchasePage";
     }
 
+    @RequestMapping(value="/LoginPopup")
+    public String LoginPopup(Model model){
+        model.addAttribute("isEnabledSignUp",true);
+        model.addAttribute("isEnabledLogin",true);
+        model.addAttribute("isLoggedIn",false);
+        //Was testing AOP here
+        return "LoginPopup";
+    }
     @RequestMapping(value = "postProductAndGetDetails")
     public Product postProductAndGetDetails(){
         return null;

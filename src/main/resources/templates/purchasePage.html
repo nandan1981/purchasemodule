@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="rentaladda.appcache">
 <head>
     <title>Purchase new stuff</title>
     <meta charset="utf-8">
@@ -42,7 +42,7 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
             <li th:if="${isEnabledSignUp}"><a href="#"><span class="glyphicon"></span> Sign Up</a></li>
-            <li th:if="${isEnabledLogin}"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li th:if="${isEnabledLogin}"><a href="#" onclick="return openPopupLogin();"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             <li th:if="${isLoggedIn}"><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
         </ul>
     </div>
@@ -85,5 +85,14 @@
     © 2018 RentalAdda
 </footer>
 <!-- Footer ends-->
+<script>
+    function openPopupLogin(){
+        var win = window.open('/LoginPopup','signup','height=500,width=600,top=400,left=600,toolbar=no,status=no,titlebar=no,menubar=no,location=no');
+        if (window.focus) {
+            win.focus()}
+        return false;
+    }
+
+</script>
 </body>
 </html>
