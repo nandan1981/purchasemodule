@@ -23,4 +23,28 @@ public class PurchaseController {
         return null;
     }
 
+    @RequestMapping(value = "/fetchPurchaseData/{searchKey}")
+    public String fetchPurchaseData(Model model, @PathVariable("searchKey") String searchKey){
+        model.addAttribute("isLoggedIn",true);
+        return "purchasePage";
+    }
+
+    @RequestMapping(value = "/insertPurchaseData/{Gadget}")
+    public String insertPurchaseData(Model model){
+        model.addAttribute("isLoggedIn",true);
+        return "purchasePage";
+    }
+
+    @RequestMapping(value = "/updatePurchaseData")
+    public String updatePurchaseData(Model model){
+        model.addAttribute("isLoggedIn",true);
+        return "purchasePage";
+    }
+
+    @RequestMapping(value = "/deletePurchaseData")
+    public String deletePurchaseData(Model model){
+        model.addAttribute("isLoggedIn",true);
+        return "purchasePage";
+    }
+
 }
