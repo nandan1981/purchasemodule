@@ -2,11 +2,6 @@ package com.rent.model;
 
 import java.util.Date;
 
-enum Rating {
-
-    ONE,TWO,THREE,FOUR,FIVE;
-}
-
 public class Product {
 
     private int product_id;

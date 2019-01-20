@@ -1,6 +1,7 @@
 package com.rent.controller;
 
 import com.rent.model.User;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jms.annotation.JmsListener;
@@ -13,14 +14,20 @@ import java.io.ObjectInputStream;
 
 @SpringBootApplication
 
-public class PurchasemoduleApplication {
+public class PurchasemoduleApplication implements CommandLineRunner {
 
     public static void main(String[] args){
         SpringApplication.run(PurchasemoduleApplication.class, args);
 
 
     }
-         @JmsListener(destination="rentalQueue")
+
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
+
+    @JmsListener(destination="rentalQueue")
         private static void queueListener(byte[] input) throws JMSException {
 
 
